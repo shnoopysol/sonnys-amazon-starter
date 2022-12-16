@@ -27,8 +27,6 @@ function Product({ id, title, price, description, category, image }) {
       <p className="text-xs mt-2 my-2 line-clamp-2">{description}</p>
 
       <div className="mb-5">
-        {/* Make a price formatter if you have time at some point */}
-        {/* <p>${price}</p> */}
         <Currency quantity={price} currency="GBP"/>
       </div>
 
