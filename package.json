@@ -6,6 +6,9 @@
     "build": "next build",
     "start": "next start"
   },
+  "engines":{
+    "node":"16.x"
+  },
   "dependencies": {
     "@heroicons/react": "^2.0.13",
     "@reduxjs/toolkit": "1.5.0",
