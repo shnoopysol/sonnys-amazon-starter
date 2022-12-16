@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
+import Currency from "react-currency-formatter";
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
@@ -27,7 +28,8 @@ function Product({ id, title, price, description, category, image }) {
 
       <div className="mb-5">
         {/* Make a price formatter if you have time at some point */}
-        <p>${price}</p>
+        {/* <p>${price}</p> */}
+        <Currency quantity={price} currency="GBP"/>
       </div>
 
       {hasPrime && (
