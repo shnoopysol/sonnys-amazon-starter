@@ -33,7 +33,7 @@ function CheckoutProduct({ id, title, rating, price, description, category, imag
       {/* Middle */}
       <div className="col-span-3 mx-5">
         <p>{title}</p>
-        <div>
+        <div className="flex">
           {Array(rating)
             .fill()
             .map((_, i) => (

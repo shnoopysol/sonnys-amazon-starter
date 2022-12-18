@@ -12,16 +12,21 @@
   "dependencies": {
     "@heroicons/react": "^2.0.13",
     "@reduxjs/toolkit": "1.5.0",
+    "@stripe/stripe-js": "^1.46.0",
     "@tailwindcss/line-clamp": "^0.2.0",
+    "axios": "^1.2.1",
     "firebase": "^8.10.1",
-    "firebase-admin": "^9.8.0",
+    "firebase-admin": "^9.12.0",
+    "micro": "^10.0.1",
+    "moment": "^2.29.4",
     "next": "latest",
     "next-auth": "^4.18.6",
     "react": "^18.2.0",
     "react-currency-formatter": "^1.1.0",
     "react-dom": "^18.2.0",
     "react-redux": "7.2.2",
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "^3.2.23",
+    "stripe": "^11.4.0"
   },
   "license": "MIT",
   "devDependencies": {
