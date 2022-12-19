@@ -8,7 +8,7 @@ let serviceAccount;
 //   serviceAccount = require("../../../permissions.json");
 // } else {
   console.log("TEST: RETRIEVING FROM CDN");
-  serviceAccount = require(process.env.G_SERVICE_ACCOUNT_PERMISSIONS);
+  serviceAccount = JSON.parse(process.env.G_SERVICE_ACCOUNT_PERMISSIONS);
 // }
 
 const app = !admin.apps.length
