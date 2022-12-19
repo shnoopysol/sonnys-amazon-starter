@@ -1,7 +1,7 @@
 const { buffer } = require("micro");
 import * as admin from "firebase-admin";
 
-// Secure a connection to FIREBASE from the backend
+// Secure a connection to FIREBASE from the backend...
 let serviceAccount;
 if (process.env.HOST === "http://localhost:3000") {
   console.log("TEST: YUP RETRIEVING FROM LOCALHOST ");
