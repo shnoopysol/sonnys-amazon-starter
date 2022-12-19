@@ -3,13 +3,13 @@ import * as admin from "firebase-admin";
 
 // Secure a connection to FIREBASE from the backend...
 let serviceAccount;
-if (process.env.HOST === "http://localhost:3000") {
-  console.log("TEST: YUP RETRIEVING FROM LOCALHOST ");
-  serviceAccount = require("../../../permissions.json");
-} else {
+// if (process.env.HOST === "http://localhost:3000") {
+//   console.log("TEST: YUP RETRIEVING FROM LOCALHOST ");
+//   serviceAccount = require("../../../permissions.json");
+// } else {
   console.log("TEST: RETRIEVING FROM CDN");
   serviceAccount = require(process.env.G_SERVICE_ACCOUNT_PERMISSIONS);
-}
+// }
 
 const app = !admin.apps.length
   ? admin.initializeApp({
