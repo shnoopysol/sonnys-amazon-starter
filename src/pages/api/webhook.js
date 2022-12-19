@@ -2,7 +2,14 @@ const { buffer } = require("micro");
 import * as admin from "firebase-admin";
 
 // Secure a connection to FIREBASE from the backend
-const serviceAccount = require("../../../permissions.json");
+let serviceAccount;
+if (process.env.HOST === "http://localhost:3000") {
+  console.log("TEST: YUP RETRIEVING FROM LOCALHOST ");
+  serviceAccount = require("../../../permissions.json");
+} else {
+  console.log("TEST: RETRIEVING FROM CDN");
+  serviceAccount = require(process.env.G_SERVICE_ACCOUNT_PERMISSIONS);
+}
 
 const app = !admin.apps.length
   ? admin.initializeApp({
@@ -32,7 +39,8 @@ const fulfillOrder = async (session) => {
     })
     .then(() => {
       console.log(`SUCCESS: ORDER ${session.id} has been added to the DB`);
-    }).catch((e) => console.log("THERE WAS AN ERROR IN FIRESTORE FUNC", e));
+    })
+    .catch((e) => console.log("THERE WAS AN ERROR IN FIRESTORE FUNC", e));
 };
 
 export default async (req, res) => {
@@ -42,7 +50,6 @@ export default async (req, res) => {
     const payload = requestBuffer.toString();
     const sig = req.headers["stripe-signature"];
 
-    
     let event;
 
     // Verify that the EVENT posted came from stripe
